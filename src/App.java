@@ -69,6 +69,13 @@ public class App {
             }
         }
         System.out.println("Menores de edad");
+        for (Par<Integer,String> par : menores) {
+            System.out.println(par.getClave() + par.getValor());
+        }
+        System.out.println("Mayores de edad");
+        for (Par<String,Integer> par : mayores) {
+            System.out.println(par.getClave() + par.getValor());
+        }
         
         
 
