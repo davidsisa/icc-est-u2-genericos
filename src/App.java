@@ -61,11 +61,13 @@ public class App {
             if (personas[i].getEdad()>= 18) {
                 mayores[contMayores] = new Par<String,Integer>();
                 mayores[contMayores].setClave(personas[i].getNombre());
-                mayores[contMayores].setValor(personas[i].getEdad());
+            mayores[contMayores].setValor(personas[i].getEdad());
+            contMayores++;
             }else{
                 menores[contMenores] = new Par<Integer,String>();
                 menores[contMenores].setClave(personas[i].getEdad());
                 menores[contMenores].setValor(personas[i].getNombre());
+                contMenores++;
             }
         }
         System.out.println("Menores de edad");
