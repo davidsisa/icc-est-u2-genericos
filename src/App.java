@@ -43,13 +43,33 @@ public class App {
         for (Personas vari : personas) {
             vari.mostrar();
         }
+        int pMayores = 0;
+        int pMenores = 0;
         for (int i = 0; i < personas.length; i++) {
             if (personas[i].getEdad()>= 18) {
-                Par<String,Integer> nombreYEdad = new Par<>();
+                pMayores ++;
             } else {
-                Par<Integer,String> edadYNombre = new Par<>();
+                pMenores ++;
             }
         }
+        Par<String,Integer>[] mayores = new Par[pMayores];
+        Par<Integer,String>[] menores = new Par[pMenores];
+        int contMayores = 0;
+        int contMenores = 0;
+
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i].getEdad()>= 18) {
+                mayores[contMayores] = new Par<String,Integer>();
+                mayores[contMayores].setClave(personas[i].getNombre());
+                mayores[contMayores].setValor(personas[i].getEdad());
+            }else{
+                menores[contMenores] = new Par<Integer,String>();
+                menores[contMenores].setClave(personas[i].getEdad());
+                menores[contMenores].setValor(personas[i].getNombre());
+            }
+        }
+        System.out.println("Menores de edad");
+        
         
 
 
